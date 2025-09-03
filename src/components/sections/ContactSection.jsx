@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, Github, Linkedin } from "lucide-react";
 import { Card, CardContent } from "../ui/Card";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/Textarea";
 import { Button } from "@/components/ui/Button";
@@ -44,48 +44,35 @@ const socialLinks = [
 ];
 
 export default function ContactSection() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
+  const form = useRef();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState("");
 
-  const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus("");
 
-    try {
-      await emailjs.send(
-        "service_f4k5kh7", // 🔹 replace with EmailJS Service ID
-        "template_k2ow18a", // 🔹 replace with EmailJS Template ID
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
+    emailjs
+      .sendForm(
+        "service_f4k5kh7",   // 🔹 replace with your EmailJS Service ID
+        "template_k2ow18a", // 🔹 replace with your EmailJS Template ID
+        form.current,
+        "KeXas4Dz3yNnJwx0R" // 🔹 replace with your EmailJS Public Key
+      )
+      .then(
+        () => {
+          setSubmitStatus("success");
+          form.current.reset();
         },
-        "KeXas4Dz3yNnJwx0R" // 🔹 replace with EmailJS Public Key
-      );
-
-      setSubmitStatus("success");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    } catch (error) {
-      console.error("Error sending email:", error);
-      setSubmitStatus("error");
-    }
-
-    setIsSubmitting(false);
+        (error) => {
+          console.error("FAILED...", error.text);
+          setSubmitStatus("error");
+        }
+      )
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   };
 
   return (
@@ -174,7 +161,7 @@ export default function ContactSection() {
                 Follow Me
               </h4>
               <div className="flex space-x-4">
-                {socialLinks.map((social, index) => (
+                {socialLinks.map((social) => (
                   <a
                     key={social.label}
                     href={social.href}
@@ -198,16 +185,14 @@ export default function ContactSection() {
           >
             <Card className="border-none shadow-2xl">
               <CardContent className="p-8">
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form ref={form} onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Name
                       </label>
                       <Input
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
+                        name="from_name" // ✅ Must match EmailJS template variable
                         required
                         className="w-full"
                         placeholder="Your name"
@@ -218,10 +203,8 @@ export default function ContactSection() {
                         Email
                       </label>
                       <Input
-                        name="email"
+                        name="from_email" // ✅ Must match EmailJS template variable
                         type="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
                         required
                         className="w-full"
                         placeholder="your.email@example.com"
@@ -234,9 +217,7 @@ export default function ContactSection() {
                       Subject
                     </label>
                     <Input
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleInputChange}
+                      name="subject" // ✅ Must match EmailJS template variable
                       required
                       className="w-full"
                       placeholder="Project inquiry"
@@ -248,9 +229,7 @@ export default function ContactSection() {
                       Message
                     </label>
                     <Textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
+                      name="message" // ✅ Must match EmailJS template variable
                       required
                       className="w-full h-32"
                       placeholder="Tell me about your project..."
