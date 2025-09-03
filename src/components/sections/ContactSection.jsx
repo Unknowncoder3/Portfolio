@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, Github, Linkedin } from "lucide-react";
 import { Card, CardContent } from "../ui/Card";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { Input } from "@/components/ui/Input";
 import { Textarea } from "@/components/ui/Textarea";
 import { Button } from "@/components/ui/Button";
@@ -44,35 +44,51 @@ const socialLinks = [
 ];
 
 export default function ContactSection() {
-  const form = useRef();
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus("");
 
-    emailjs
-      .sendForm(
-        "service_f4k5kh7",   // 🔹 replace with your EmailJS Service ID
-        "template_k2ow18a", // 🔹 replace with your EmailJS Template ID
-        form.current,
-        "KeXas4Dz3yNnJwx0R" // 🔹 replace with your EmailJS Public Key
-      )
-      .then(
-        () => {
-          setSubmitStatus("success");
-          form.current.reset();
+    try {
+      await emailjs.send(
+        "service_f4k5kh7", // 🔹 replace with your EmailJS Service ID
+        "template_2q1o7ft", // 🔹 replace with your EmailJS Template ID
+        {
+          name: formData.name,           // matches {{name}}
+          from_name: formData.name,      // matches {{from_name}}
+          from_email: formData.email,    // matches {{from_email}}
+          subject: formData.subject,     // matches {{subject}}
+          message: formData.message,     // matches {{message}}
+          title: formData.subject,       // matches {{title}}
+          email: formData.email,         // matches {{email}} (Reply To)
         },
-        (error) => {
-          console.error("FAILED...", error.text);
-          setSubmitStatus("error");
-        }
-      )
-      .finally(() => {
-        setIsSubmitting(false);
-      });
+        "KeXas4Dz3yNnJwx0R" // 🔹 replace with your EmailJS Public Key
+      );
+
+      setSubmitStatus("success");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error("Error sending email:", error.text || error);
+      setSubmitStatus("error");
+    }
+
+    setIsSubmitting(false);
   };
 
   return (
@@ -185,14 +201,16 @@ export default function ContactSection() {
           >
             <Card className="border-none shadow-2xl">
               <CardContent className="p-8">
-                <form ref={form} onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Name
                       </label>
                       <Input
-                        name="from_name" // ✅ Must match EmailJS template variable
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
                         required
                         className="w-full"
                         placeholder="Your name"
@@ -203,8 +221,10 @@ export default function ContactSection() {
                         Email
                       </label>
                       <Input
-                        name="from_email" // ✅ Must match EmailJS template variable
+                        name="email"
                         type="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
                         required
                         className="w-full"
                         placeholder="your.email@example.com"
@@ -217,7 +237,9 @@ export default function ContactSection() {
                       Subject
                     </label>
                     <Input
-                      name="subject" // ✅ Must match EmailJS template variable
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleInputChange}
                       required
                       className="w-full"
                       placeholder="Project inquiry"
@@ -229,7 +251,9 @@ export default function ContactSection() {
                       Message
                     </label>
                     <Textarea
-                      name="message" // ✅ Must match EmailJS template variable
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
                       required
                       className="w-full h-32"
                       placeholder="Tell me about your project..."
