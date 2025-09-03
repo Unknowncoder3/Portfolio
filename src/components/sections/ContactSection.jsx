@@ -3,8 +3,8 @@ import { Mail, Phone, MapPin, Send, Github, Linkedin } from "lucide-react";
 import { Card, CardContent } from "../ui/card";
 import React, { useState } from "react";
 import { Input } from "@/components/ui/Input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/Button";
+import { Textarea } from "@/components/ui/Textarea";
+import { Button } from "@/components/ui/button";
 import emailjs from "@emailjs/browser"; // ✅ EmailJS import
 
 const contactInfo = [
