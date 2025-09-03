@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Brain, BarChart3, Code, Database, TrendingUp, Users } from "lucide-react";
-import { Card, CardContent } from "../ui/card";
+import { Card, CardContent } from "../ui/Card";
 
 
 const experience = [
