@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 import InteractiveAvatar from "../hero/InteractiveAvatar";
 import MatrixBackground from "../hero/MatrixBackground";
 import { Typewriter } from "react-simple-typewriter";
