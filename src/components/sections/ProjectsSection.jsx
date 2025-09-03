@@ -8,8 +8,8 @@ import {
   CardTitle,
 } from "../ui/card"; 
 import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/badge"; 
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Badge } from "@/components/ui/Badge"; 
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 
 // Example project data (replace with backend/API later)
 const projectData = [
