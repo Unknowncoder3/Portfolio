@@ -18,7 +18,7 @@
   color: var(--text);
 }
 .hero-role {
-  margin-top: 22px;
+  margin-top: 32px;
   color: var(--accent-2);
   font-size: clamp(1rem, 1.55vw, 1.38rem);
   line-height: 1.2;
@@ -131,6 +131,12 @@
 .hero-proof-strip strong { font-size: 1.05rem; line-height: 1.1; }
 .hero-proof-strip span { color: var(--muted); font-size: .68rem; line-height: 1.25; }
 
+/* Fine-tuned identity spacing: keep the name and role visually separate. */
+.hero-identity h1 + .hero-role {
+  margin-top: 32px;
+  padding-top: 2px;
+}
+
 @media (max-width: 1100px) {
   .hero-proof-strip { grid-template-columns: repeat(3, 1fr); }
 }
@@ -143,7 +149,7 @@
 @media (max-width: 575px) {
   .hero-section { padding-top: 120px; }
   .hero-identity h1 { font-size: 3.3rem; }
-  .hero-role { font-size: .82rem; letter-spacing: .055em; line-height: 1.45; }
+  .hero-role { font-size: .82rem; letter-spacing: .055em; line-height: 1.45; margin-top: 20px; }
   .hero-identity p { font-size: .94rem; line-height: 1.65; }
   .hero-build { margin-top: 28px; }
   .hero-build h2 { font-size: 1.5rem; }
