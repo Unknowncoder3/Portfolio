@@ -21,10 +21,7 @@
 }
 .hero-lead { max-width: 650px; font-size: 1.06rem; }
 .hero-lead strong { color: var(--text); }
-.hero-meta {
-  gap: 10px;
-  margin-top: 30px;
-}
+.hero-meta { gap: 10px; margin-top: 30px; }
 .hero-meta span {
   border: 1px solid var(--line);
   background: color-mix(in srgb, var(--surface) 70%, transparent);
@@ -52,15 +49,82 @@
   backdrop-filter: blur(14px);
   background: color-mix(in srgb, var(--surface) 82%, transparent);
 }
-.btn-primary-custom {
-  box-shadow: 0 10px 30px color-mix(in srgb, var(--accent) 22%, transparent);
+.btn-primary-custom { box-shadow: 0 10px 30px color-mix(in srgb, var(--accent) 22%, transparent); }
+
+/* Recruiter-first hero hierarchy: identity before brand statement. */
+.hero-copy {
+  display: flex;
+  flex-direction: column;
 }
+.hero-copy .eyebrow { order: 1; }
+.hero-copy .hero-lead { order: 2; }
+.hero-copy h1 { order: 3; }
+.hero-copy > .d-flex { order: 4; }
+.hero-copy .hero-meta { order: 5; }
+
+.hero-copy .hero-lead {
+  font-size: 0;
+  line-height: 1;
+  margin: 18px 0 0;
+  max-width: none;
+}
+.hero-copy .hero-lead strong {
+  display: block;
+  font-size: clamp(3.2rem, 6.5vw, 6rem);
+  line-height: .92;
+  letter-spacing: -.065em;
+  font-weight: 850;
+  color: var(--text);
+}
+.hero-copy .hero-lead strong::after {
+  content: "DATA ANALYST  ·  APPLIED AI DEVELOPER";
+  display: block;
+  margin-top: 12px;
+  color: var(--accent-2);
+  font-size: clamp(1rem, 1.55vw, 1.35rem);
+  line-height: 1.2;
+  letter-spacing: .09em;
+  font-weight: 800;
+}
+.hero-copy .hero-lead::after {
+  content: "I build data-driven products and intelligent systems using Python, SQL, machine learning and modern AI.";
+  display: block;
+  max-width: 650px;
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 1.06rem;
+  line-height: 1.8;
+}
+.hero-copy h1 {
+  margin: 34px 0 0;
+  font-size: clamp(1.55rem, 2.7vw, 2.45rem);
+  line-height: 1.08;
+  letter-spacing: -.045em;
+  font-weight: 750;
+  color: var(--muted);
+}
+.hero-copy h1::before {
+  content: "WHAT I BUILD";
+  display: block;
+  margin-bottom: 9px;
+  color: var(--accent);
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: .62rem;
+  letter-spacing: .18em;
+  font-weight: 800;
+}
+.hero-copy h1 em { color: var(--text); background: none; -webkit-text-fill-color: initial; }
+.hero-copy > .d-flex { margin-top: 28px !important; }
+
 @media (max-width: 991px) {
-  .hero-copy h1 { font-size: clamp(3.2rem, 11vw, 5.5rem); }
+  .hero-copy h1 { font-size: clamp(1.55rem, 4vw, 2.2rem); }
   .hero-panel::before { display:none; }
 }
 @media (max-width: 575px) {
-  .hero-copy h1 { font-size: 3.1rem; }
+  .hero-copy .hero-lead strong { font-size: 3.15rem; }
+  .hero-copy .hero-lead strong::after { font-size: .84rem; letter-spacing: .065em; }
+  .hero-copy .hero-lead::after { font-size: .94rem; line-height: 1.65; }
+  .hero-copy h1 { font-size: 1.35rem; margin-top: 27px; }
   .hero-copy .d-flex { gap: 8px !important; }
   .hero-copy .btn { padding: 10px 13px; font-size: .78rem; }
   .hero-meta span { font-size: .67rem; }
