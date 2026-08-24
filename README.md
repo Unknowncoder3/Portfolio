@@ -1,28 +1,49 @@
-# Snehasish Das — Recruiter-Focused Portfolio
+# Snehasish Das — Data Analyst | Applied AI Developer
 
-A recruiter-first React + Vite + Bootstrap portfolio for **Snehasish Das — Data Analyst | Applied AI Developer | Python & SQL**.
+> Recruiter-focused portfolio showcasing practical work across **Data Analytics, Business Intelligence, Machine Learning and Applied AI**.
 
-## Included
+## Live portfolio
 
-- Refined motion system with scroll reveals, staggered project entrances and restrained hero motion
-- Reduced-motion accessibility support
+https://snehasishdasportfolio.netlify.app/
 
-- Strong AI + Data positioning
-- Featured and complete project catalogue
-- Project category filters
-- Project case-study modal
-- GitHub / LinkedIn / Tableau proof-of-work links
-- Real resume PDF in `public/resume.pdf`
-- Internship experience with measurable outcomes
-- Recruiter snapshot metrics
-- Skills grouped by domain
-- Dark/light mode
-- Responsive navigation and mobile layout
-- Working Bootstrap mobile navbar
-- Responsive project cards
-- Netlify/Vercel-ready Vite build
+## What this portfolio demonstrates
 
-## Run
+- Python & SQL based analytics
+- Power BI and Tableau dashboards
+- Machine learning and NLP
+- Applied AI / LLM / retrieval workflows
+- End-to-end application development
+- Practical project documentation and proof of work
+
+## Featured work
+
+- AI-Based Candidate Screening & Interview System
+- E-Commerce Customer Intelligence & Sales Analytics
+- Early Behavioral Screening AI
+- AI-Based Travel Planner
+- StudyBuddy
+- Madhav Store Sales Dashboard
+- HR Analytics Dashboard
+- AI-Based Web Scraper
+- Movie Recommendation System
+- Spam SMS Detection
+- SQL Data Analysis
+- Face Recognition System
+
+## Experience
+
+**Data Mining Intern — CK and Sons Textiles**
+
+Worked on data extraction, cleaning, analysis and reporting workflows using Python, SQL and Excel. Portfolio materials highlight analysis of 50K+ rows, approximately 40% lower reporting effort and approximately 2× faster decision turnaround.
+
+## Stack
+
+**Programming:** Python, SQL, Java, C, C++, JavaScript  
+**Analytics & BI:** Pandas, NumPy, Matplotlib, Excel, Power BI, Tableau, EDA, RFM Analysis  
+**AI / ML:** Scikit-learn, NLP, Computer Vision, LLMs, RAG, Embeddings, FAISS, Recommendation Systems  
+**Engineering:** Flask, FastAPI, Streamlit, React, Vite, REST APIs, Git, GitHub
+
+## Run locally
 
 ```bash
 npm install
@@ -35,15 +56,11 @@ npm run dev
 npm run build
 ```
 
-## Recommended next content pass
+## Author
 
-1. Add a real screenshot for every flagship project under `public/projects/`.
-2. Replace each case-study modal with a dedicated project route when project screenshots/details are ready.
-3. Add a short 1–2 sentence internship story based on the final verified resume wording.
-4. Keep only verified metrics and live-demo URLs.
-5. Deploy the production build to the portfolio domain.
+**Snehasish Das**  
+Data Analyst | Applied AI Developer
 
-## Design principle
-
-The site is deliberately built around **proof of work**, not a long list of buzzwords:
-**problem → project → technology → evidence → repository/demo → contact**.
+- GitHub: https://github.com/Unknowncoder3
+- LinkedIn: https://www.linkedin.com/in/snehasish-das-b75a551b0/
+- Email: snehasishdas146@gmail.com
