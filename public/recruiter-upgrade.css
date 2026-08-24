@@ -1,31 +1,14 @@
 /* Recruiter-focused polish: identity, proof, readability and trust. */
 
 /* ---------- HERO ---------- */
-.hero-copy::before {
-  content: "SNEHASISH DAS";
-  display: block;
-  color: var(--text);
-  font-size: clamp(1.15rem, 1.6vw, 1.45rem);
-  line-height: 1;
-  letter-spacing: .14em;
-  font-weight: 800;
-  margin-bottom: 14px;
-}
-.hero-copy::after {
-  content: "DATA ANALYST  ·  APPLIED AI DEVELOPER";
-  display: block;
-  color: var(--accent-2);
-  font-size: .72rem;
-  line-height: 1;
-  letter-spacing: .16em;
-  font-weight: 800;
-  margin-top: -18px;
-  margin-bottom: 18px;
-}
+/* The hero identity is rendered semantically in main.jsx. Keep one source of truth. */
+.hero-copy::before,
+.hero-copy::after { content: none; display: none; }
 .hero-copy h1 {
-  font-size: clamp(3rem, 6vw, 5.7rem);
-  max-width: 720px;
+  font-size: clamp(3.5rem, 7vw, 6.8rem);
+  max-width: 760px;
 }
+.hero-role { margin-top: 32px; }
 .hero-lead { max-width: 660px; }
 .hero-meta span {
   border: 1px solid var(--line);
@@ -57,22 +40,27 @@
 .project-card .project-actions button { display: inline-flex; align-items: center; gap: 6px; }
 .project-detail-btn i { font-size: .72rem; }
 
-/* Real repository previews for the remaining projects. */
-.project-card:has(a[href*="HR-Analytics-Dashboard"]) .project-visual {
-  background-image: url("https://raw.githubusercontent.com/Unknowncoder3/HR-Analytics-Dashboard/main/HR%20Analytics%20Dashboard.png");
-}
-.project-card:has(a[href*="Movie-Recommendation-system"]) .project-visual {
-  background-image: url("https://raw.githubusercontent.com/Unknowncoder3/Movie-Recommendation-system/main/home.png");
-}
+/* Real repository previews from the project's own README/repository assets. */
+.project-card:has(a[href*="AI-BASED-RECRUITMENT-SCREENING"]) .project-visual { background-image: url("https://raw.githubusercontent.com/Unknowncoder3/AI-BASED-RECRUITMENT-SCREENING/main/screenshots/first.png"); }
+.project-card:has(a[href*="E-Commerce-Customer-Intelligence-Sales-Analytics"]) .project-visual { background-image: url("https://raw.githubusercontent.com/Unknowncoder3/E-Commerce-Customer-Intelligence-Sales-Analytics/main/Screenshots/Dashboard.jpeg"); }
+.project-card:has(a[href*="Early-behavioral-screening-AI"]) .project-visual { background-image: url("https://raw.githubusercontent.com/Unknowncoder3/Early-behavioral-screening-AI/main/screenshots/ui.png"); }
+.project-card:has(a[href*="AI-based-Travel-Planner"]) .project-visual { background-image: url("https://raw.githubusercontent.com/Unknowncoder3/AI-based-Travel-Planner/main/screenshots/first.png"); }
+.project-card:has(a[href*="StudyBuddy"]) .project-visual { background-image: url("https://raw.githubusercontent.com/Unknowncoder3/StudyBuddy/main/screenshots/01-dashboard.png"); }
+.project-card:has(a[href*="MADHAV-STORE-DASHBOARD"]) .project-visual { background-image: url("https://raw.githubusercontent.com/Unknowncoder3/MADHAV-STORE-DASHBOARD/main/madhav%20store%20dashboard.png"); }
+.project-card:has(a[href*="HR-Analytics-Dashboard"]) .project-visual { background-image: url("https://raw.githubusercontent.com/Unknowncoder3/HR-Analytics-Dashboard/main/HR%20Analytics%20Dashboard.png"); }
+.project-card:has(a[href*="Movie-Recommendation-system"]) .project-visual { background-image: url("https://raw.githubusercontent.com/Unknowncoder3/Movie-Recommendation-system/main/home.png"); }
 
-/* No screenshot exists in the AI Web Scraper README, so use an honest pipeline visual. */
-.project-card:has(a[href*="Ai-based-Web-scrapper"]) .project-visual {
-  background-image:
-    radial-gradient(circle at 72% 25%, rgba(124,140,255,.28), transparent 28%),
-    linear-gradient(145deg, #0e1422, #090d16 72%);
+/* Honest coded previews for repositories that do not currently contain screenshots. */
+.project-card:has(a[href*="Ai-based-Web-scrapper"]) .project-visual,
+.project-card:has(a[href*="spam-sms-detection"]) .project-visual,
+.project-card:has(a[href*="SQL-Data-Analysis"]) .project-visual,
+.project-card:has(a[href*="Face-Recognition-System"]) .project-visual {
+  background-image: radial-gradient(circle at 75% 20%, rgba(124,140,255,.26), transparent 28%), linear-gradient(145deg, #111827, #080c15 72%);
 }
-.project-card:has(a[href*="Ai-based-Web-scrapper"]) .project-visual::before {
-  content: "URL  →  SCRAPE  →  CLEAN  →  EMBED  →  FAISS  →  LLM";
+.project-card:has(a[href*="Ai-based-Web-scrapper"]) .project-visual::before,
+.project-card:has(a[href*="spam-sms-detection"]) .project-visual::before,
+.project-card:has(a[href*="SQL-Data-Analysis"]) .project-visual::before,
+.project-card:has(a[href*="Face-Recognition-System"]) .project-visual::before {
   position: absolute;
   inset: 0;
   display: grid;
@@ -83,7 +71,12 @@
   letter-spacing: .12em;
   text-align: center;
   opacity: .9;
+  z-index: 1;
 }
+.project-card:has(a[href*="Ai-based-Web-scrapper"]) .project-visual::before { content: "URL  →  SCRAPE  →  CLEAN  →  EMBED  →  FAISS  →  LLM"; }
+.project-card:has(a[href*="spam-sms-detection"]) .project-visual::before { content: "TEXT  →  CLEAN  →  TF-IDF  →  CLASSIFIER  →  SPAM / HAM"; }
+.project-card:has(a[href*="SQL-Data-Analysis"]) .project-visual::before { content: "DATA  →  SQL  →  TRANSFORM  →  ANALYZE  →  INSIGHT"; }
+.project-card:has(a[href*="Face-Recognition-System"]) .project-visual::before { content: "IMAGE  →  DETECT  →  EXTRACT  →  MATCH  →  RECOGNIZE"; }
 
 /* ---------- RECRUITER SNAPSHOT ---------- */
 .snapshot-card {
@@ -109,10 +102,7 @@
 .snapshot-card strong { color: var(--text); }
 
 /* ---------- EXPERIENCE ---------- */
-.experience-card {
-  position: relative;
-  overflow: hidden;
-}
+.experience-card { position: relative; overflow: hidden; }
 .experience-card::before {
   content: "EXPERIENCE";
   position: absolute;
@@ -128,10 +118,7 @@
 
 /* ---------- SKILLS ---------- */
 .skill-card { transition: transform .22s ease, border-color .22s ease; }
-.skill-card:hover {
-  transform: translateY(-4px);
-  border-color: color-mix(in srgb, var(--accent) 35%, var(--line));
-}
+.skill-card:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--accent) 35%, var(--line)); }
 .skill-card h4 { display:flex; align-items:center; gap:9px; }
 .skill-card h4::before {
   content: "";
@@ -148,21 +135,12 @@
 .contact-inner .btn-primary-custom { min-width: 170px; }
 
 /* ---------- ACCESSIBILITY / MOBILE ---------- */
-:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 @media (max-width: 575px) {
-  .hero-copy::before { font-size: 1rem; letter-spacing: .11em; }
-  .hero-copy::after { font-size: .61rem; letter-spacing: .11em; margin-top: -12px; }
-  .hero-copy h1 { font-size: 3.05rem; }
+  .hero-copy h1 { font-size: 3.3rem; }
+  .hero-role { font-size: .82rem; letter-spacing: .055em; line-height: 1.45; margin-top: 24px; }
   .project-card .project-visual { min-height: 160px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    scroll-behavior: auto !important;
-    animation-duration: .01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: .01ms !important;
-  }
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
