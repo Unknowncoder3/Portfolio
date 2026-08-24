@@ -47,4 +47,21 @@
 /* Added from the actual GitHub README previews. */
 .project-card:has(a[href*="HR-Analytics-Dashboard"]) .project-visual { background-image: url("https://raw.githubusercontent.com/Unknowncoder3/HR-Analytics-Dashboard/main/HR%20Analytics%20Dashboard.png"); }
 .project-card:has(a[href*="Movie-Recommendation-system"]) .project-visual { background-image: url("https://raw.githubusercontent.com/Unknowncoder3/Movie-Recommendation-system/main/home.png"); }
+/* Coded fallback visuals for projects that do not currently have a repository screenshot. */
+.project-card:has(a[href*="Ai-based-Web-scrapper"]) .project-visual,
+.project-card:has(a[href*="spam-sms-detection"]) .project-visual,
+.project-card:has(a[href*="SQL-Data-Analysis"]) .project-visual,
+.project-card:has(a[href*="Face-Recognition-System"]) .project-visual { background-color: #0b1020; }
+.project-card:has(a[href*="Ai-based-Web-scrapper"]) .project-visual { background-image: radial-gradient(circle at 76% 22%, rgba(83,196,255,.28) 0 2px, transparent 3px), linear-gradient(135deg, transparent 20%, rgba(83,196,255,.08) 21% 22%, transparent 23%), linear-gradient(135deg,#111827,#070b13 75%); }
+.project-card:has(a[href*="spam-sms-detection"]) .project-visual { background-image: radial-gradient(circle at 25% 30%, rgba(124,140,255,.28) 0 2px, transparent 3px), linear-gradient(135deg, transparent 20%, rgba(124,140,255,.08) 21% 22%, transparent 23%), linear-gradient(135deg,#111827,#070b13 75%); }
+.project-card:has(a[href*="SQL-Data-Analysis"]) .project-visual { background-image: radial-gradient(circle at 72% 28%, rgba(83,196,255,.26) 0 2px, transparent 3px), linear-gradient(135deg, transparent 20%, rgba(83,196,255,.08) 21% 22%, transparent 23%), linear-gradient(135deg,#111827,#070b13 75%); }
+.project-card:has(a[href*="Face-Recognition-System"]) .project-visual { background-image: radial-gradient(circle at 50% 30%, rgba(124,140,255,.28) 0 2px, transparent 3px), linear-gradient(135deg, transparent 20%, rgba(124,140,255,.08) 21% 22%, transparent 23%), linear-gradient(135deg,#111827,#070b13 75%); }
+.project-card:has(a[href*="Ai-based-Web-scrapper"]) .project-visual::before,
+.project-card:has(a[href*="spam-sms-detection"]) .project-visual::before,
+.project-card:has(a[href*="SQL-Data-Analysis"]) .project-visual::before,
+.project-card:has(a[href*="Face-Recognition-System"]) .project-visual::before { position:absolute; inset:0; display:grid; place-items:center; padding:24px; color:#cbd1ff; font:700 .68rem/1.8 "SFMono-Regular",Consolas,monospace; letter-spacing:.1em; text-align:center; opacity:.95; z-index:1; }
+.project-card:has(a[href*="Ai-based-Web-scrapper"]) .project-visual::before { content:"URL  →  SCRAPE  →  CLEAN  →  EMBED  →  FAISS  →  LLM"; }
+.project-card:has(a[href*="spam-sms-detection"]) .project-visual::before { content:"TEXT  →  CLEAN  →  TF-IDF  →  CLASSIFIER  →  SPAM / HAM"; }
+.project-card:has(a[href*="SQL-Data-Analysis"]) .project-visual::before { content:"DATA  →  SQL  →  TRANSFORM  →  ANALYZE  →  INSIGHT"; }
+.project-card:has(a[href*="Face-Recognition-System"]) .project-visual::before { content:"IMAGE  →  DETECT  →  EXTRACT  →  MATCH  →  RECOGNIZE"; }
 @media (max-width: 575px) { .project-card .project-visual { min-height: 150px; } }
