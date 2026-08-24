@@ -1,38 +1,76 @@
-/* Hero direction: restrained, technical, recruiter-first. */
+/* Recruiter-first hero: coded to match the approved visual reference. */
 .hero-section {
   min-height: 100svh;
+  position: relative;
+  overflow: hidden;
   background:
-    radial-gradient(circle at 78% 24%, rgba(124,140,255,.18), transparent 28%),
-    radial-gradient(circle at 12% 80%, rgba(83,196,255,.09), transparent 25%);
+    radial-gradient(circle at 78% 18%, rgba(124,140,255,.18), transparent 30%),
+    radial-gradient(circle at 12% 88%, rgba(83,196,255,.08), transparent 28%);
 }
 .hero-copy { max-width: 760px; }
-.hero-copy h1 {
-  max-width: 760px;
-  text-wrap: balance;
-  font-size: clamp(3.25rem, 7.3vw, 7rem);
-  line-height: .91;
-  letter-spacing: -.07em;
+.hero-copy .eyebrow { margin-bottom: 28px; }
+.hero-identity h1 {
+  margin: 0;
+  font-size: clamp(3.5rem, 7vw, 6.8rem);
+  line-height: .92;
+  letter-spacing: -.075em;
+  font-weight: 850;
+  color: var(--text);
 }
-.hero-copy h1 em {
-  background: linear-gradient(100deg, var(--accent-2), #d7dcff 55%, var(--accent));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.hero-role {
+  margin-top: 22px;
+  color: var(--accent-2);
+  font-size: clamp(1rem, 1.55vw, 1.38rem);
+  line-height: 1.2;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  font-weight: 800;
 }
-.hero-lead { max-width: 650px; font-size: 1.06rem; }
-.hero-lead strong { color: var(--text); }
+.hero-role span { color: var(--muted); margin: 0 7px; }
+.hero-identity p {
+  max-width: 680px;
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.8;
+}
+.hero-build { margin-top: 34px; }
+.hero-build > span {
+  display: block;
+  color: var(--accent);
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: .63rem;
+  letter-spacing: .18em;
+  font-weight: 800;
+  margin-bottom: 9px;
+}
+.hero-build h2 {
+  margin: 0;
+  font-size: clamp(1.7rem, 3vw, 2.8rem);
+  line-height: 1.08;
+  letter-spacing: -.055em;
+  color: var(--muted);
+  font-weight: 800;
+}
+.hero-build h2 em {
+  font-style: normal;
+  color: var(--text);
+}
 .hero-meta { gap: 10px; margin-top: 30px; }
 .hero-meta span {
   border: 1px solid var(--line);
   background: color-mix(in srgb, var(--surface) 70%, transparent);
-  padding: 7px 10px;
+  padding: 8px 12px;
   border-radius: 999px;
   font-size: .73rem;
+  color: var(--muted);
 }
+.hero-meta i { color: var(--accent); margin-right: 6px; }
+.hero-panel { position: relative; min-height: 440px; }
 .hero-panel::before {
   content: "AI  /  DATA  /  BUILD";
   position: absolute;
-  top: 4%;
+  top: 3%;
   right: 3%;
   color: var(--muted);
   opacity: .6;
@@ -51,81 +89,68 @@
 }
 .btn-primary-custom { box-shadow: 0 10px 30px color-mix(in srgb, var(--accent) 22%, transparent); }
 
-/* Recruiter-first hero hierarchy: identity before brand statement. */
-.hero-copy {
-  display: flex;
-  flex-direction: column;
+/* Bottom proof strip shown in the reference design. */
+.hero-proof-strip {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 58px;
 }
-.hero-copy .eyebrow { order: 1; }
-.hero-copy .hero-lead { order: 2; }
-.hero-copy h1 { order: 3; }
-.hero-copy > .d-flex { order: 4; }
-.hero-copy .hero-meta { order: 5; }
-
-.hero-copy .hero-lead {
-  font-size: 0;
-  line-height: 1;
-  margin: 18px 0 0;
-  max-width: none;
+.hero-proof-strip > div {
+  min-height: 92px;
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 12px;
+  align-content: center;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--surface) 78%, transparent);
+  backdrop-filter: blur(14px);
+  transition: transform .25s ease, border-color .25s ease, background .25s ease;
 }
-.hero-copy .hero-lead strong {
-  display: block;
-  font-size: clamp(3.2rem, 6.5vw, 6rem);
-  line-height: .92;
-  letter-spacing: -.065em;
-  font-weight: 850;
-  color: var(--text);
+.hero-proof-strip > div:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+  background: color-mix(in srgb, var(--surface) 90%, transparent);
 }
-.hero-copy .hero-lead strong::after {
-  content: "DATA ANALYST  ·  APPLIED AI DEVELOPER";
-  display: block;
-  margin-top: 12px;
-  color: var(--accent-2);
-  font-size: clamp(1rem, 1.55vw, 1.35rem);
-  line-height: 1.2;
-  letter-spacing: .09em;
-  font-weight: 800;
-}
-.hero-copy .hero-lead::after {
-  content: "I build data-driven products and intelligent systems using Python, SQL, machine learning and modern AI.";
-  display: block;
-  max-width: 650px;
-  margin-top: 22px;
-  color: var(--muted);
-  font-size: 1.06rem;
-  line-height: 1.8;
-}
-.hero-copy h1 {
-  margin: 34px 0 0;
-  font-size: clamp(1.55rem, 2.7vw, 2.45rem);
-  line-height: 1.08;
-  letter-spacing: -.045em;
-  font-weight: 750;
-  color: var(--muted);
-}
-.hero-copy h1::before {
-  content: "WHAT I BUILD";
-  display: block;
-  margin-bottom: 9px;
+.hero-proof-strip i {
+  grid-row: 1 / span 2;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: rgba(75,86,231,.13);
   color: var(--accent);
-  font-family: "SFMono-Regular", Consolas, monospace;
-  font-size: .62rem;
-  letter-spacing: .18em;
-  font-weight: 800;
+  font-size: 1.1rem;
 }
-.hero-copy h1 em { color: var(--text); background: none; -webkit-text-fill-color: initial; }
-.hero-copy > .d-flex { margin-top: 28px !important; }
+.hero-proof-strip strong { font-size: 1.05rem; line-height: 1.1; }
+.hero-proof-strip span { color: var(--muted); font-size: .68rem; line-height: 1.25; }
 
+@media (max-width: 1100px) {
+  .hero-proof-strip { grid-template-columns: repeat(3, 1fr); }
+}
 @media (max-width: 991px) {
-  .hero-copy h1 { font-size: clamp(1.55rem, 4vw, 2.2rem); }
+  .hero-grid { grid-template-columns: 1fr; gap: 45px; }
+  .hero-panel { min-height: 360px; }
   .hero-panel::before { display:none; }
+  .hero-proof-strip { grid-template-columns: repeat(2, 1fr); margin-top: 45px; }
 }
 @media (max-width: 575px) {
-  .hero-copy .hero-lead strong { font-size: 3.15rem; }
-  .hero-copy .hero-lead strong::after { font-size: .84rem; letter-spacing: .065em; }
-  .hero-copy .hero-lead::after { font-size: .94rem; line-height: 1.65; }
-  .hero-copy h1 { font-size: 1.35rem; margin-top: 27px; }
-  .hero-copy .d-flex { gap: 8px !important; }
-  .hero-copy .btn { padding: 10px 13px; font-size: .78rem; }
+  .hero-section { padding-top: 120px; }
+  .hero-identity h1 { font-size: 3.3rem; }
+  .hero-role { font-size: .82rem; letter-spacing: .055em; line-height: 1.45; }
+  .hero-identity p { font-size: .94rem; line-height: 1.65; }
+  .hero-build { margin-top: 28px; }
+  .hero-build h2 { font-size: 1.5rem; }
+  .hero-proof-strip { grid-template-columns: 1fr; gap: 10px; margin-top: 34px; }
+  .hero-proof-strip > div { min-height: 78px; }
+  .floating-stat { display:none; }
+  .terminal-body { font-size: .68rem; padding: 18px; }
+  .hero-meta { gap: 8px; }
   .hero-meta span { font-size: .67rem; }
 }
