@@ -38,16 +38,15 @@
 .project-card .project-visual > div:nth-child(2) span { color: #fff; font-family: "SFMono-Regular", Consolas, monospace; font-size: .66rem; letter-spacing: .12em; font-weight: 700; }
 .project-card .project-visual > div:nth-child(2) small { color: rgba(255,255,255,.72); font-size: .68rem; }
 .project-card .project-visual > b { position: absolute; top: 12px; right: 12px; z-index: 3; color: #d6dbff; border: 1px solid rgba(169,178,255,.55); background: rgba(12,16,30,.72); border-radius: 999px; padding: 5px 8px; font-size: .56rem; letter-spacing: .14em; }
-.project-card:has(a[href*="AI-BASED-RECRUITMENT-SCREENING"]) .project-visual { background-image: url("https://raw.githubusercontent.com/Unknowncoder3/AI-BASED-RECRUITMENT-SCREENING/main/screenshots/first.png"); }
+/* CandidateIQ live visual: renders the deployed product in the project card until repository-native screenshots are added. */
+.project-card:has(a[href*="AI-BASED-RECRUITMENT-SCREENING"]) .project-visual { background-image: url("https://image.thum.io/get/width/1200/crop/760/https://candidateiq-recruitment.netlify.app/"); }
 .project-card:has(a[href*="E-Commerce-Customer-Intelligence-Sales-Analytics"]) .project-visual { background-image: url("https://raw.githubusercontent.com/Unknowncoder3/E-Commerce-Customer-Intelligence-Sales-Analytics/main/Screenshots/Dashboard.jpeg"); }
 .project-card:has(a[href*="Early-behavioral-screening-AI"]) .project-visual { background-image: url("https://raw.githubusercontent.com/Unknowncoder3/Early-behavioral-screening-AI/main/screenshots/ui.png"); }
 .project-card:has(a[href*="AI-based-Travel-Planner"]) .project-visual { background-image: url("https://raw.githubusercontent.com/Unknowncoder3/AI-based-Travel-Planner/main/screenshots/first.png"); }
 .project-card:has(a[href*="StudyBuddy"]) .project-visual { background-image: url("https://raw.githubusercontent.com/Unknowncoder3/StudyBuddy/main/screenshots/01-dashboard.png"); }
 .project-card:has(a[href*="MADHAV-STORE-DASHBOARD"]) .project-visual { background-image: url("https://raw.githubusercontent.com/Unknowncoder3/MADHAV-STORE-DASHBOARD/main/madhav%20store%20dashboard.png"); }
-/* Added from the actual GitHub README previews. */
 .project-card:has(a[href*="HR-Analytics-Dashboard"]) .project-visual { background-image: url("https://raw.githubusercontent.com/Unknowncoder3/HR-Analytics-Dashboard/main/HR%20Analytics%20Dashboard.png"); }
 .project-card:has(a[href*="Movie-Recommendation-system"]) .project-visual { background-image: url("https://raw.githubusercontent.com/Unknowncoder3/Movie-Recommendation-system/main/home.png"); }
-/* Coded fallback visuals for projects that do not currently have a repository screenshot. */
 .project-card:has(a[href*="Ai-based-Web-scrapper"]) .project-visual,
 .project-card:has(a[href*="spam-sms-detection"]) .project-visual,
 .project-card:has(a[href*="SQL-Data-Analysis"]) .project-visual,
