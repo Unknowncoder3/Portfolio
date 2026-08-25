@@ -31,7 +31,7 @@ The portfolio is designed to make the most important information visible quickly
 
 <p align="center">
   <a href="https://github.com/Unknowncoder3/AI-BASED-RECRUITMENT-SCREENING">
-    <img src="https://raw.githubusercontent.com/Unknowncoder3/AI-BASED-RECRUITMENT-SCREENING/main/screenshots/first.png" alt="AI-Based Candidate Screening System" width="31%" />
+    <img src="https://raw.githubusercontent.com/Unknowncoder3/AI-BASED-RECRUITMENT-SCREENING/main/screenshots/candidate-profile.png" alt="CandidateIQ AI Candidate Screening and Interview System" width="31%" />
   </a>
   <a href="https://github.com/Unknowncoder3/E-Commerce-Customer-Intelligence-Sales-Analytics">
     <img src="https://raw.githubusercontent.com/Unknowncoder3/E-Commerce-Customer-Intelligence-Sales-Analytics/main/Screenshots/Dashboard.jpeg" alt="E-Commerce Customer Intelligence and Sales Analytics" width="31%" />
@@ -42,8 +42,16 @@ The portfolio is designed to make the most important information visible quickly
 </p>
 
 <p align="center">
-  <sub>AI candidate screening · E-commerce analytics · Computer-vision / AI prototype</sub>
+  <sub>CandidateIQ recruitment intelligence · E-commerce analytics · Computer-vision / AI prototype</sub>
 </p>
+
+### CandidateIQ — live project
+
+CandidateIQ is now a **live, recruiter-oriented AI recruitment screening and interview platform** with a candidate practice workflow, structured candidate profile intake, resume/project evidence collection, explainable screening architecture and interview stages.
+
+👉 **[Open CandidateIQ live demo](https://candidateiq-recruitment.netlify.app/)**
+
+The CandidateIQ repository README contains the full product overview, architecture, responsible-AI notes and dedicated product screenshots.
 
 ---
 
@@ -62,7 +70,7 @@ The portfolio is designed to make the most important information visible quickly
 
 | Project | Area | Highlights |
 |---|---|---|
-| **AI-Based Candidate Screening & Interview System** | Applied AI | Candidate scoring, resume/GitHub signals, local LLM assistance, interview workflow |
+| **CandidateIQ — AI Candidate Screening & Interview System** | Applied AI | Live candidate practice lab, resume/GitHub/academic/project evidence, explainable screening, interview workflow and local LLM assistance |
 | **E-Commerce Customer Intelligence & Sales Analytics** | Data Analytics | Revenue analysis, customer behavior, RFM segmentation, Tableau reporting |
 | **Early Behavioral Screening AI** | Computer Vision / AI | Video processing, observable signals, AI-assisted interpretation, responsible-AI safeguards |
 | **AI-Based Travel Planner** | Recommendation / AI | Personalized recommendations, structured destination data, APIs |
