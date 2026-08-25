@@ -31,7 +31,7 @@ The portfolio is designed to make the most important information visible quickly
 
 <p align="center">
   <a href="https://github.com/Unknowncoder3/AI-BASED-RECRUITMENT-SCREENING">
-    <img src="https://raw.githubusercontent.com/Unknowncoder3/AI-BASED-RECRUITMENT-SCREENING/main/screenshots/candidate-profile.png" alt="CandidateIQ AI Candidate Screening and Interview System" width="31%" />
+    <img src="https://image.thum.io/get/width/1400/crop/900/https://candidateiq-recruitment.netlify.app/" alt="CandidateIQ AI Candidate Screening and Interview System" width="31%" />
   </a>
   <a href="https://github.com/Unknowncoder3/E-Commerce-Customer-Intelligence-Sales-Analytics">
     <img src="https://raw.githubusercontent.com/Unknowncoder3/E-Commerce-Customer-Intelligence-Sales-Analytics/main/Screenshots/Dashboard.jpeg" alt="E-Commerce Customer Intelligence and Sales Analytics" width="31%" />
@@ -51,7 +51,7 @@ CandidateIQ is now a **live, recruiter-oriented AI recruitment screening and int
 
 👉 **[Open CandidateIQ live demo](https://candidateiq-recruitment.netlify.app/)**
 
-The CandidateIQ repository README contains the full product overview, architecture, responsible-AI notes and dedicated product screenshots.
+The CandidateIQ repository README contains the full product overview, architecture, responsible-AI notes and live product previews.
 
 ---
 
