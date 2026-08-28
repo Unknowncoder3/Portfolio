@@ -1,0 +1,4 @@
+#projects .project-card:first-child .project-visual{background:url('/hiresense-login.svg') center/cover no-repeat!important;min-height:360px;position:relative;overflow:hidden}
+#projects .project-card:first-child .project-visual>div{display:none}
+#projects .project-card:first-child .project-visual>b{z-index:3}
+#projects .project-card:first-child .project-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(7,12,24,.08),rgba(7,12,24,.18));pointer-events:none}
