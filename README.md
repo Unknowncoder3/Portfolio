@@ -12,11 +12,41 @@
 
 ---
 
-## Portfolio Preview
+## Featured Project — HireSense AI
+
+<p align="center">
+  <a href="https://hiresense-ai-frontend.netlify.app/">
+    <img src="https://image.thum.io/get/width/1400/crop/900/https://hiresense-ai-frontend.netlify.app/" alt="HireSense AI recruitment intelligence dashboard" width="96%" />
+  </a>
+</p>
+
+### HireSense AI — Recruitment Intelligence Platform
+
+**HireSense AI** is a live, full-stack recruiter workspace for candidate intelligence, job pipelines, resume analysis, explainable matching, interview operations, recruitment analytics, and AI-assisted hiring decisions.
+
+**Live demo:** https://hiresense-ai-frontend.netlify.app/  
+**Repository:** https://github.com/Unknowncoder3/hiresense-ai  
+**API docs:** https://hiresense-ai-ybbx.onrender.com/docs
+
+**Stack:** React · Vite · Bootstrap · Recharts · FastAPI · SQLAlchemy · PostgreSQL · Pandas · NumPy · Scikit-learn · PyPDF · python-docx · OpenAI API (optional)
+
+**Highlights:**
+- Live recruiter dashboard with hiring KPIs and funnel analytics
+- Candidate search, stage tracking, skills, experience, and match scores
+- Job creation and pipeline management backed by PostgreSQL
+- Application and interview workflows
+- Resume Intelligence for PDF, DOCX, and TXT files
+- Explainable candidate-job matching with skill and semantic signals
+- AI Hiring Copilot grounded in recruitment data
+- JWT authentication, password hashing, CORS controls, security headers, CI, Docker, Netlify, and Render deployment
+
+---
+
+## About
 
 The portfolio is designed to make the most important information visible quickly: **who I am, what I build, proof of work, and how to contact me.**
 
-### Hero & positioning
+### Positioning
 
 > **Snehasish Das**  
 > **Data Analyst · Applied AI Developer**
@@ -30,28 +60,20 @@ The portfolio is designed to make the most important information visible quickly
 ### Selected project previews
 
 <p align="center">
+  <a href="https://hiresense-ai-frontend.netlify.app/">
+    <img src="https://image.thum.io/get/width/1400/crop/900/https://hiresense-ai-frontend.netlify.app/" alt="HireSense AI live recruitment dashboard" width="31%" />
+  </a>
   <a href="https://github.com/Unknowncoder3/AI-BASED-RECRUITMENT-SCREENING">
     <img src="https://image.thum.io/get/width/1400/crop/900/https://candidateiq-recruitment.netlify.app/" alt="CandidateIQ AI Candidate Screening and Interview System" width="31%" />
   </a>
   <a href="https://github.com/Unknowncoder3/E-Commerce-Customer-Intelligence-Sales-Analytics">
     <img src="https://raw.githubusercontent.com/Unknowncoder3/E-Commerce-Customer-Intelligence-Sales-Analytics/main/Screenshots/Dashboard.jpeg" alt="E-Commerce Customer Intelligence and Sales Analytics" width="31%" />
   </a>
-  <a href="https://github.com/Unknowncoder3/Early-behavioral-screening-AI">
-    <img src="https://raw.githubusercontent.com/Unknowncoder3/Early-behavioral-screening-AI/main/screenshots/ui.png" alt="Early Behavioral Screening AI" width="31%" />
-  </a>
 </p>
 
 <p align="center">
-  <sub>CandidateIQ recruitment intelligence · E-commerce analytics · Computer-vision / AI prototype</sub>
+  <sub>HireSense AI · CandidateIQ recruitment intelligence · E-commerce analytics</sub>
 </p>
-
-### CandidateIQ — live project
-
-CandidateIQ is now a **live, recruiter-oriented AI recruitment screening and interview platform** with a candidate practice workflow, structured candidate profile intake, resume/project evidence collection, explainable screening architecture and interview stages.
-
-👉 **[Open CandidateIQ live demo](https://candidateiq-recruitment.netlify.app/)**
-
-The CandidateIQ repository README contains the full product overview, architecture, responsible-AI notes and live product previews.
 
 ---
 
@@ -62,6 +84,7 @@ The CandidateIQ repository README contains the full product overview, architectu
 - **Machine Learning:** Scikit-learn, NLP, recommendation systems and classification
 - **Applied AI:** LLMs, embeddings, retrieval, RAG and AI-assisted workflows
 - **Engineering:** Flask, FastAPI, Streamlit, React, Vite and REST APIs
+- **Production Thinking:** Authentication, databases, CI, containers and cloud deployment
 - **Proof of work:** GitHub repositories, project case studies, dashboards and live demos
 
 ---
@@ -70,10 +93,11 @@ The CandidateIQ repository README contains the full product overview, architectu
 
 | Project | Area | Highlights |
 |---|---|---|
-| **CandidateIQ — AI Candidate Screening & Interview System** | Applied AI | Live candidate practice lab, resume/GitHub/academic/project evidence, explainable screening, interview workflow and local LLM assistance |
-| **E-Commerce Customer Intelligence & Sales Analytics** | Data Analytics | Revenue analysis, customer behavior, RFM segmentation, Tableau reporting |
-| **Early Behavioral Screening AI** | Computer Vision / AI | Video processing, observable signals, AI-assisted interpretation, responsible-AI safeguards |
-| **AI-Based Travel Planner** | Recommendation / AI | Personalized recommendations, structured destination data, APIs |
+| **HireSense AI — Recruitment Intelligence Platform** | Full-Stack AI | Live recruiter dashboard, PostgreSQL-backed hiring workflows, Resume Intelligence, explainable matching, analytics and AI Hiring Copilot |
+| **CandidateIQ — AI Candidate Screening & Interview System** | Applied AI | Candidate practice lab, structured evidence collection, screening, interview workflow and local LLM assistance |
+| **E-Commerce Customer Intelligence & Sales Analytics** | Data Analytics | Revenue analysis, customer behavior, RFM segmentation and Tableau reporting |
+| **Early Behavioral Screening AI** | Computer Vision / AI | Video processing, observable signals, AI-assisted interpretation and responsible-AI safeguards |
+| **AI-Based Travel Planner** | Recommendation / AI | Personalized recommendations, structured destination data and APIs |
 | **StudyBuddy** | AI Application | Code, PDF, voice, web and video-oriented productivity workflows |
 | **Madhav Store Sales Dashboard** | Business Intelligence | Retail KPIs, DAX, Power Query, sales and profit analysis |
 | **HR Analytics Dashboard** | Business Intelligence | Attrition, demographics, satisfaction and workforce analysis |
@@ -90,8 +114,6 @@ The CandidateIQ repository README contains the full product overview, architectu
 ### Data Mining Intern — CK and Sons Textiles
 
 Worked on **data extraction, cleaning, analysis and reporting workflows** using Python, SQL and Excel to support operational decision-making.
-
-> Portfolio claims and metrics are intentionally kept conservative here; detailed evidence is maintained in the relevant resume/project materials.
 
 ---
 
@@ -123,18 +145,6 @@ npm run dev
 ```bash
 npm run build
 ```
-
----
-
-## Deployment
-
-The portfolio is deployed on **Netlify** and is intended to follow a simple GitHub → Netlify workflow.
-
-```text
-VS Code → Git → GitHub → Netlify → Live Portfolio
-```
-
-Every portfolio change should be committed to the `main` branch and deployed through the connected hosting workflow.
 
 ---
 
